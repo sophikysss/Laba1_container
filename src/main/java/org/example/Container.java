@@ -34,4 +34,35 @@ public class Container {
     {
         return size == 0;
     }
+    public void add(Object elem)
+    {
+        if(size == elems.length)
+        {
+            resize();
+        }
+        elems[size++]=elem;
+    }
+
+    public Object get(int index)
+    {
+        if(index<0||index>=size)
+        {
+            throw new IndexOutOfBoundsException("Index: "+index+"Size: "+size);
+        }
+        return elems[index];
+    }
+
+    public void remove(int index)
+    {
+        if(index <0 || index>=size)
+        {
+            throw new IndexOutOfBoundsException("Index: "+index+"Size: "+size);
+        }
+        for (int i=index; i<size-1; i++)
+        {
+            elems[i]=elems[i+1];
+        }
+        elems[--size]=null;
+    }
+
 }
