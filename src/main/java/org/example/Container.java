@@ -18,4 +18,17 @@ public class Container {
         size = 0;
     }
 
+    public int getSize()
+    {
+        return size;
+    }
+
+    private void resize()
+    {
+        int newCapacity = elems.length*2;
+        Object[] newElements=new Object[newCapacity];
+        System.arraycopy(elems, 0,newElements, 0, elems.length);
+        elems=newElements;
+    }
+
 }
