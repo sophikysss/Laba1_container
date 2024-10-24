@@ -30,5 +30,8 @@ public class Container {
         System.arraycopy(elems, 0,newElements, 0, elems.length);
         elems=newElements;
     }
-
+    public boolean isEmpty()
+    {
+        return size == 0;
+    }
 }
